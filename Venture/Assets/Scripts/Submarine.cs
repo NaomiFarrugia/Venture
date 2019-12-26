@@ -7,6 +7,18 @@ public class Submarine : MonoBehaviour
     Rigidbody2D m_Rigidbody;
     [SerializeField] float m_Speed = 3f;
 
+    [Header("Bubble")]
+    [SerializeField]
+    private GameObject _laserPrefab;
+
+    [SerializeField]
+    private float _fireRate = 0.5f;
+
+    private float _nextFire = -1f;
+
+    private SpawnManager _spawnManager;
+
+
     void Start()
     {
         //Fetch the Rigidbody component you attach from your GameObject
@@ -30,5 +42,6 @@ public class Submarine : MonoBehaviour
         //     //Move the Rigidbody downwards constantly at the speed you define (the green arrow axis in Scene view)
         //     m_Rigidbody.velocity = -transform.up * 3f;
         // }
+        
     }
 }
