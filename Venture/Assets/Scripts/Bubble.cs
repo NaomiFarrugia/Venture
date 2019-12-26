@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-        // speed variable = 10
+        // speed variable = 9
     [SerializeField]
-    private float _speed = 10f;   
+    private float _speed = 9f;   
 
     // Update is called once per frame
     void Update()

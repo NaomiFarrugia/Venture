@@ -34,4 +34,9 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public void OnPlayerDeath()
+{
+    _stopSpawning = true;
+}
+
 }

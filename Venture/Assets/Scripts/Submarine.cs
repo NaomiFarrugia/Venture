@@ -9,7 +9,7 @@ public class Submarine : MonoBehaviour
 
     [Header("Bubble")]
     [SerializeField]
-    private GameObject _laserPrefab;
+    private GameObject _BubblePrefab;
 
     [SerializeField]
     private float _fireRate = 0.5f;
@@ -27,6 +27,17 @@ public class Submarine : MonoBehaviour
 
     void Update()
     {
+        CalculateMovement();
+
+        // if I hit the space key and the game time is greater than nextFire
+        // spawn bubble
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _nextFire)
+        {
+            FireBubble();
+        }
+    }
+        void CalculateMovement()   
+    { 
         float vert = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.up * vert * m_Speed * Time.deltaTime);
@@ -42,6 +53,15 @@ public class Submarine : MonoBehaviour
         //     //Move the Rigidbody downwards constantly at the speed you define (the green arrow axis in Scene view)
         //     m_Rigidbody.velocity = -transform.up * 3f;
         // }
-        
     }
+        void FireBubble()
+    {
+        _nextFire = Time.time + _fireRate;
+
+        // Bubble is spawing at the player's position
+        // Queaternion.identity = default rotation (0 degrees)
+            Vector3 bubblePos = transform.position + new Vector3(0, -1.2201f, 1.100f);
+            Instantiate(_BubblePrefab, bubblePos, Quaternion.identity);
+    }
+
 }
