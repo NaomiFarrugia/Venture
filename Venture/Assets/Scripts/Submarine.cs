@@ -21,6 +21,10 @@ public class Submarine : MonoBehaviour
 
     private SpawnManager _spawnManager;
 
+    private UIManager _UIManager;
+
+    private GameManager _GameManager;
+
 
     void Start()
     {
@@ -79,6 +83,14 @@ public class Submarine : MonoBehaviour
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
         }
+        _UIManager.UpdateLives(_lives);
+    }
+
+    public void AddScore()
+    {
+        _score += 1;
+        //communicate with the UI Manager and visualize the score
+        _UIManager.SetScoreText(_score);
     }
 
 }

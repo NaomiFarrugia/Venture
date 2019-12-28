@@ -45,20 +45,18 @@ public class Enemy : MonoBehaviour
     // destroy the bubble
     // destroy us
     if (other.tag == "Bubble")
-    //{
-        //_Submarine.AddScore();
-       // Destroy(other.gameObject);
-       // OnEnemyDeath();
-    //}
-   // }
+    {
+        _Submarine.AddScore();
+        Destroy(other.gameObject);
+        OnEnemyDeath();
+    }
+    }
 
     void OnEnemyDeath()
     {
         _animator.SetTrigger("OnEnemyDeath");
         _speed= 0;
-
         Destroy(this.gameObject, 2.633f);
     }
-    }
-}
+} 
 
