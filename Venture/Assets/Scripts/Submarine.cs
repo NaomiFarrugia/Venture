@@ -7,6 +7,9 @@ public class Submarine : MonoBehaviour
     Rigidbody2D m_Rigidbody;
     [SerializeField] float m_Speed = 3f;
 
+    [SerializeField]
+    private int _lives = 3;
+
     [Header("Bubble")]
     [SerializeField]
     private GameObject _BubblePrefab;
@@ -62,6 +65,20 @@ public class Submarine : MonoBehaviour
         // Queaternion.identity = default rotation (0 degrees)
             Vector3 bubblePos = transform.position + new Vector3(0, -1.2201f, 1.100f);
             Instantiate(_BubblePrefab, bubblePos, Quaternion.identity);
+    }
+
+    public void Damage()
+    {
+        //reduce lives by 1
+        _lives -= 1;
+
+        //check if dead
+        // destroy us
+        if (_lives < 1)
+        {
+            _spawnManager.OnPlayerDeath();
+            Destroy(this.gameObject);
+        }
     }
 
 }

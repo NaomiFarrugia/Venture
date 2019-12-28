@@ -27,5 +27,38 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector3(Random.Range(-7f, 7f), 7, 0);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+      // if the other is the submarine
+      // damage the submarine
+      // destroy us
+    if (other.tag == "Submarine")
+    {
+        Submarine Submarine = other.GetComponent<Submarine>();
+        if (Submarine != null)
+        {
+        Submarine.Damage();
+        }
+    }
+    // if the other is a bubble
+    // destroy the bubble
+    // destroy us
+    if (other.tag == "Bubble")
+    //{
+        //_Submarine.AddScore();
+       // Destroy(other.gameObject);
+       // OnEnemyDeath();
+    //}
+   // }
+
+    void OnEnemyDeath()
+    {
+        _animator.SetTrigger("OnEnemyDeath");
+        _speed= 0;
+
+        Destroy(this.gameObject, 2.633f);
+    }
+    }
 }
 
