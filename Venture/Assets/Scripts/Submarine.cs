@@ -86,11 +86,11 @@ public class Submarine : MonoBehaviour
         _UIManager.UpdateLives(_lives);
     }
 
-    public void AddScore()
-    {
-        _score += 1;
+    //public void AddScore()
+    //{
+       // _score += 1;
         //communicate with the UI Manager and visualize the score
-        _UIManager.SetScoreText(_score);
-    }
+        //_UIManager.SetScoreText(_score);
+    //}
 
 }

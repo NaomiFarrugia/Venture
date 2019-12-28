@@ -22,9 +22,9 @@ public class Enemy : MonoBehaviour
         // move left at 3m/s
         transform.Translate(Vector3.left * _speed * Time.deltaTime);
 
-        if (transform.position.x < -7)
+        if (transform.position.x < -4)
         {
-            transform.position = new Vector3(Random.Range(-7f, 7f), 7, 0);
+            transform.position = new Vector3(Random.Range(-4f, 4f), 4, 0);
         }
     }
 
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     // destroy us
     if (other.tag == "Bubble")
     {
-        _Submarine.AddScore();
+        //_Submarine.AddScore();
         Destroy(other.gameObject);
         OnEnemyDeath();
     }
