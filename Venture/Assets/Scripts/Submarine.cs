@@ -10,6 +10,8 @@ public class Submarine : MonoBehaviour
     [SerializeField]
     private int _lives = 3;
 
+    private int _score = 0  ;
+
     [Header("Bubble")]
     [SerializeField]
     private GameObject _BubblePrefab;
@@ -32,7 +34,9 @@ public class Submarine : MonoBehaviour
     void Start()
     {
         //Fetch the Rigidbody component you attach from your GameObject
-        m_Rigidbody = GetComponent<Rigidbody2D>();    
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        _UIManager = FindObjectOfType<UIManager>();
+        _spawnManager =FindObjectOfType<SpawnManager>();
     }
 
     void Update()
@@ -89,11 +93,11 @@ public class Submarine : MonoBehaviour
         _UIManager.UpdateLives(_lives);
     }
 
-    //public void AddScore()
-    //{
-       // _score += 1;
+    public void AddScore()
+    {
+        _score += 1;
         //communicate with the UI Manager and visualize the score
-        //_UIManager.SetScoreText(_score);
-    //}
+        _UIManager.SetScoreText(_score);
+    }
 
 }

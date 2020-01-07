@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        _Submarine = GameObject.Find("Submarine").GetComponent<Submarine>(); 
+        _Submarine = GameObject.FindObjectOfType<Submarine>(); 
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         // destroy us
         if (other.tag == "Bubble")
         {
-            //_Submarine.AddScore();
+            _Submarine.AddScore();
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
