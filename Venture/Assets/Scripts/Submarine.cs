@@ -17,6 +17,9 @@ public class Submarine : MonoBehaviour
     [SerializeField]
     private float _fireRate = 0.5f;
 
+    [SerializeField]
+    private Transform _bubbleSpawnPoint;
+
     private float _nextFire = -1f;
 
     private SpawnManager _spawnManager;
@@ -68,7 +71,7 @@ public class Submarine : MonoBehaviour
         // Bubble is spawing at the player's position
         // Queaternion.identity = default rotation (0 degrees)
             Vector3 bubblePos = transform.position + new Vector3(0, -1.2201f, 1.100f);
-            Instantiate(_BubblePrefab, bubblePos, Quaternion.identity);
+            Instantiate(_BubblePrefab, _bubbleSpawnPoint.position, Quaternion.identity);
     }
 
     public void Damage()

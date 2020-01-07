@@ -30,33 +30,26 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-      // if the other is the submarine
-      // damage the submarine
-      // destroy us
-    if (other.tag == "Submarine")
-    {
-        Submarine Submarine = other.GetComponent<Submarine>();
-        if (Submarine != null)
+        // if the other is the submarine
+        // damage the submarine
+        // destroy us
+        if (other.tag == "Submarine")
         {
-        Submarine.Damage();
+            Submarine Submarine = other.GetComponent<Submarine>();
+            if (Submarine != null)
+            {
+            Submarine.Damage();
+            }
         }
-    }
-    // if the other is a bubble
-    // destroy the bubble
-    // destroy us
-    if (other.tag == "Bubble")
-    {
-        //_Submarine.AddScore();
-        Destroy(other.gameObject);
-        OnEnemyDeath();
-    }
-    }
-
-    void OnEnemyDeath()
-    {
-        _animator.SetTrigger("OnEnemyDeath");
-        _speed= 0;
-        Destroy(this.gameObject, 2.633f);
+        // if the other is a bubble
+        // destroy the bubble
+        // destroy us
+        if (other.tag == "Bubble")
+        {
+            //_Submarine.AddScore();
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 } 
 

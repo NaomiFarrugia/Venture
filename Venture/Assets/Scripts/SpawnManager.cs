@@ -10,6 +10,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _enemyContainer;
 
+    [SerializeField]
+    private float _spawnTimer;
+
     private bool _stopSpawning = false;
 
     void Start()
@@ -23,14 +26,13 @@ public class SpawnManager : MonoBehaviour
     {
         while(_stopSpawning == false )
         {
-            float x = Random.Range(-8f, 8f);
-            Vector3 spawnPos = new Vector3(x, 8f, 0);
+            Vector3 spawnPos = new Vector3(transform.position.x, Random.Range(-3.7f, 3.7f), 0);
 
             GameObject newEnemy = Instantiate(_enemyPrefab, spawnPos, Quaternion.identity);
             newEnemy.transform.SetParent(_enemyContainer.transform);
 
             // wait for 5 seconds
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(_spawnTimer);
         }
     }
 
