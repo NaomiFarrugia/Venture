@@ -13,6 +13,15 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float _spawnTimer;
 
+    [SerializeField]
+    private GameObject _diamondPrefab;
+
+    [SerializeField]
+    private GameObject _diamondContainer;
+
+    [SerializeField]
+    private float _DiamondSpawnTimer;
+
     private bool _stopSpawning = false;
 
     void Start()
@@ -33,6 +42,20 @@ public class SpawnManager : MonoBehaviour
 
             // wait for 5 seconds
             yield return new WaitForSeconds(_spawnTimer);
+        }
+    }
+
+    IEnumerator SpawnDiamondRoutine()
+    {
+        while(_stopSpawning == false )
+        {
+            Vector3 spawnPos = new Vector3(transform.position.x, Random.Range(-3.7f, 3.7f), 0);
+
+            GameObject newDiamond = Instantiate(_diamondPrefab, spawnPos, Quaternion.identity);
+            newDiamond.transform.SetParent(_diamondContainer.transform);
+
+            // wait for 5 seconds
+            yield return new WaitForSeconds(_DiamondSpawnTimer);
         }
     }
 

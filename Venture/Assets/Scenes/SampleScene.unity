@@ -590,6 +590,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &878762296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878762297}
+  m_Layer: 0
+  m_Name: 'Diamond Container '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &878762297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878762296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.47, y: -0.08, z: -0.0038531115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955868409
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +851,10 @@ MonoBehaviour:
     type: 3}
   _enemyContainer: {fileID: 838193296}
   _spawnTimer: 3
+  _diamondPrefab: {fileID: 4565015266125026783, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+    type: 3}
+  _diamondContainer: {fileID: 878762296}
+  _DiamondSpawnTimer: 2
 --- !u!4 &1084986730
 Transform:
   m_ObjectHideFlags: 0
@@ -5828,7 +5862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b625a4b83e4b04c840845a77b718d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 10
+  m_Speed: 7.5
   _lives: 3
   _BubblePrefab: {fileID: 972422372509062894, guid: 4609d4d1b0cd0274eb15d914d0af4436,
     type: 3}
@@ -6041,3 +6075,77 @@ Transform:
   m_Father: {fileID: 1345483025}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4565015265854224017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4565015266125026783, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_Name
+      value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026783, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565015266125026752, guid: 3fff37f5d6a74684ba917f458e0e3a73,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fff37f5d6a74684ba917f458e0e3a73, type: 3}
