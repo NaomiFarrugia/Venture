@@ -36,7 +36,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -68,9 +68,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -79,9 +79,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -103,7 +103,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f8418197005ef74e81d124108c333f9
+      spriteID: 8089297a30abd8f40960ba4ee00af7a3
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a74a466b7aba93469a1217284b872bb
+      spriteID: c8e96b5d0c2683a4bbd7e66c9bde1cb0
       vertices: []
       indices: 
       edges: []
@@ -132,10 +132,10 @@ TextureImporter:
       name: hearts_2
       rect:
         serializedVersion: 2
-        x: 42
-        y: 28
-        width: 420
-        height: 104
+        x: 341
+        y: 25
+        width: 121
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,7 +143,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0070e02ea5efe84bb877b49eb05d543
+      spriteID: 30c9c11bf4d1351498bdb40cbad533fd
       vertices: []
       indices: 
       edges: []
@@ -152,30 +152,10 @@ TextureImporter:
       name: hearts_3
       rect:
         serializedVersion: 2
-        x: 218
-        y: 0
-        width: 294
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94c6a39fa968bd64eb0511832f959faf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hearts_4
-      rect:
-        serializedVersion: 2
-        x: 341
+        x: 40
         y: 25
-        width: 121
-        height: 103
+        width: 424
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fd9938dbab92be47b3f6f5c6524032c
+      spriteID: 64ace2d05deeeb94ca5e9a111f396745
       vertices: []
       indices: 
       edges: []
