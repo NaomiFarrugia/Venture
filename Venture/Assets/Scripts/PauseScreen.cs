@@ -10,7 +10,7 @@ public class PauseScreen : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Cancel"))
         {  
             if (GameIsPaused)
     {
@@ -22,8 +22,9 @@ public class PauseScreen : MonoBehaviour
         }
     }
 
-    void Resume ()
+    public void Resume ()
     {
+        Debug.Log("resume");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
