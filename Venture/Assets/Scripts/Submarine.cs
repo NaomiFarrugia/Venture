@@ -55,18 +55,6 @@ public class Submarine : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.up * vert * m_Speed * Time.deltaTime);
-
-        // if (Input.GetKey(KeyCode.UpArrow))
-        // {
-        //     //Move the Rigidbody upwards constantly at speed you define (the green arrow axis in Scene view)
-        //     m_Rigidbody.velocity = transform.up * 3f;
-        // }
-
-        // if (Input.GetKey(KeyCode.DownArrow))
-        // {
-        //     //Move the Rigidbody downwards constantly at the speed you define (the green arrow axis in Scene view)
-        //     m_Rigidbody.velocity = -transform.up * 3f;
-        // }
     }
         void FireBubble()
     {

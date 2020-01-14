@@ -11,21 +11,19 @@ public class Enemy : MonoBehaviour
 
     private Animator _animator;
 
+    private int _direction;
+
     void Start()
     {
-        _Submarine = GameObject.FindObjectOfType<Submarine>(); 
+        _Submarine = GameObject.FindObjectOfType<Submarine>();
+        _direction = (int) Mathf.Sign(Random.Range(-1, 1));
     }
 
     // Update is called once per frame
     void Update()
     {
         // move left at 3m/s
-        transform.Translate(Vector3.left * _speed * Time.deltaTime);
-
-        if (transform.position.x < -4)
-        {
-            transform.position = new Vector3(Random.Range(-4f, 4f), 4, 0);
-        }
+        transform.Translate(Vector3.up * _direction * _speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +37,7 @@ public class Enemy : MonoBehaviour
             if (Submarine != null)
             {
             Submarine.Damage();
+            OnEnemyDeath();
             }
         }
         // if the other is a bubble
@@ -51,5 +50,10 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    void OnEnemyDeath()
+    {
+        Destroy(this.gameObject);
+    }
+    
 } 
 

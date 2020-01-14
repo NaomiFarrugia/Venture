@@ -27,6 +27,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemyRoutine());
+        StartCoroutine(SpawnDiamondRoutine());
     }  
 
     // Spawn an enemy every 5 seconds.

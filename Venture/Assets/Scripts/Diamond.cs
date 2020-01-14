@@ -26,5 +26,20 @@ public class Diamond : MonoBehaviour
         {
             transform.position = new Vector3(Random.Range(-4f, 4f), 4, 0);
         }
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Submarine")
+        {
+            Submarine Submarine = other.GetComponent<Submarine>();
+            if (Submarine != null)
+            {
+                // score
+                // destroy this
+                _Submarine.AddScore();
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
