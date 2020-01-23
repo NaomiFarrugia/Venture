@@ -16,5 +16,11 @@ public class UIEvents : MonoBehaviour
         // load the game scene
         SceneManager.LoadScene("Main Menu");
     } 
+
+    public void Exit()
+    {
+        // load the game scene
+        SceneManager.LoadScene("Exit");
+    }
     
 }
