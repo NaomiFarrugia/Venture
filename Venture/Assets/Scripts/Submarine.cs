@@ -5,6 +5,7 @@ using UnityEngine;
 public class Submarine : MonoBehaviour
 
 {
+    public GameManager gameManager;
     Rigidbody2D m_Rigidbody;
     [SerializeField] float m_Speed = 3f;
 
@@ -83,11 +84,20 @@ public class Submarine : MonoBehaviour
         _UIManager.UpdateLives(_lives);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameManager.GameOver();
+    }
+
+        private void OnBecameInvisible() 
+        {
+            gameManager.GameOver();
+        }
+
     public void AddScore()
     {
         _score += 1;
         //communicate with the UI Manager and visualize the score
         _UIManager.SetScoreText(_score);
     }
-
 }

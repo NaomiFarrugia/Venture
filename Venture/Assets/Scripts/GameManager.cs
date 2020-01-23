@@ -6,29 +6,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool _isGameOver = false;
-    public GameObject RestartGame;
+    
+    public GameObject gameOverCanvas;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetButtonDown("Cancel") && _isGameOver == true)
-        {
-            SceneManager.LoadScene("Game Screen");
-        }
+        Time.timeScale = 1;
+        gameOverCanvas.SetActive(false);
     }
-
+    
     public void GameOver()
     {
-        _isGameOver = true;
+        gameOverCanvas.SetActive(true);
     }
 
-    void Restart ()
+    public void Replay()
     {
-        { Debug.Log("Restart");
-        RestartGame.SetActive(false);
-        Time.timeScale = 1f;
-        }
+        SceneManager.LoadScene(0);
     }
-
-    
-
 }
