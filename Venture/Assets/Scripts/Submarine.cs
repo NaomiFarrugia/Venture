@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Submarine : MonoBehaviour
+
 {
     Rigidbody2D m_Rigidbody;
     [SerializeField] float m_Speed = 3f;
@@ -77,6 +78,7 @@ public class Submarine : MonoBehaviour
         {
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
+            Time.timeScale = 0f;
         }
         _UIManager.UpdateLives(_lives);
     }

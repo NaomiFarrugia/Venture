@@ -10,4 +10,17 @@ public class UIEvents : MonoBehaviour
         // load the game scene
         SceneManager.LoadScene("Game Screen");
     } 
+
+    public void Controls()
+    {
+        // load the game scene
+        SceneManager.LoadScene("Controls");
+    } 
+
+    public void MainMenu()
+    {
+        // load the game scene
+        SceneManager.LoadScene("Main Menu");
+    } 
+    
 }

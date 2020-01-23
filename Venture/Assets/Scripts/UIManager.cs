@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     private Sprite[] _liveSprites;
 
     [SerializeField]
-    private GameObject _gameOverText;
+    private GameObject _gameOverText;  
 
     void Start()
     {
@@ -35,5 +35,6 @@ public class UIManager : MonoBehaviour
         // if the lives are zero
         // start the game over sequence 
         if (lives < 1);
+        
     }
 }
