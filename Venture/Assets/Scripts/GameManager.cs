@@ -9,10 +9,28 @@ public class GameManager : MonoBehaviour
     
     public GameObject gameOverCanvas;
 
+    public static bool GameIsPaused = false;
+
+    public GameObject pauseMenuUI;
+
     private void Start()
     {
         Time.timeScale = 1;
         gameOverCanvas.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {  
+            if (GameIsPaused)
+    {
+        Resume();
+    } else
+    {
+        Pause();
+    }
+        }
     }
     
     public void GameOver()
@@ -23,5 +41,20 @@ public class GameManager : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Resume ()
+    {
+        Debug.Log("resume");
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    void Pause ()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 }
