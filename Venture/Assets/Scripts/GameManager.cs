@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
+        _isGameOver = true;
     }
 
     public void Replay()
