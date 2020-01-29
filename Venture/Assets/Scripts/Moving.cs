@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    public float speed; 
-
-    void Start ()
-    {
-        
-    }
+public float speed; 
 
 void Update ()
 {
