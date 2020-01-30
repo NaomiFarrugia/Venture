@@ -58,15 +58,6 @@ public class Submarine : MonoBehaviour
 
         transform.Translate(Vector3.up * vert * m_Speed * Time.deltaTime);
     }
-        void FireBubble()
-    {
-        _nextFire = Time.time + _fireRate;
-
-        // Bubble is spawing at the player's position
-        // Queaternion.identity = default rotation (0 degrees)
-            Vector3 bubblePos = transform.position + new Vector3(0, -1.2201f, 1.100f);
-            Instantiate(_BubblePrefab, _bubbleSpawnPoint.position, Quaternion.identity);
-    }
 
     public void Damage()
     {
@@ -78,15 +69,22 @@ public class Submarine : MonoBehaviour
         if (_lives < 1)
         {
             _spawnManager.OnPlayerDeath();
-            Destroy(this.gameObject);
+            gameManager.GameOver();
             Time.timeScale = 0f;
+
+            Destroy(this.gameObject);
         }
         _UIManager.UpdateLives(_lives);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void FireBubble()
     {
-        gameManager.GameOver();
+        _nextFire = Time.time + _fireRate;
+
+        // Bubble is spawing at the player's position
+        // Queaternion.identity = default rotation (0 degrees)
+        Vector3 bubblePos = transform.position + new Vector3(0, -1.2201f, 1.100f);
+        Instantiate(_BubblePrefab, bubblePos, Quaternion.identity);
     }
 
         private void OnBecameInvisible() 

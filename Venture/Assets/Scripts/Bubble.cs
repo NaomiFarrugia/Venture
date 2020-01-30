@@ -11,21 +11,19 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // translate the laser right
+
      transform.Translate(Vector3.right * _speed * Time.deltaTime);
 
      // if the laser position on Y is grater than 8
-     // Destroy laser
         if(transform.position.y > 8)
         {
-         // if the laser is parented to a triple shot
          // destory the parent 
             if (transform.parent != null)
         {
             Destroy(transform.parent.gameObject);
         }
 
-         // Destorys the gameovjet attached to THIS script
+         // Destorys the gameobjet attached to THIS script
         Destroy(gameObject);
     }
 }
